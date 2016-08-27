@@ -13,6 +13,8 @@ public class enableflashlight : MonoBehaviour {
 
 		GameObject.FindObjectOfType (typeof(PlayerMovement));
 
+		GameObject.FindObjectOfType (typeof(Lighting));
+
 	}
 	
 	// Update is called once per frame

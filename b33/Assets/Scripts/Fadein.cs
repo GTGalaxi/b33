@@ -3,12 +3,22 @@ using System.Collections;
 
 public class Fadein : MonoBehaviour {
 
+	[SerializeField]
+	private Stat2 battery;
+	public Transform HpBar;
+
 	public Texture2D fadeOutTexture;
 	public float fadeSpeed = 0.8f;
 
 	private int drawDepth = -1000;
 	private float alpha = 1.0f;
 	private int fadeDir = -1;
+
+	void Awake()
+	{
+		//Initializes the stats
+		battery.Initialize();
+	}
 
 	void OnGUI()
 	{

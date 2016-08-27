@@ -2,11 +2,21 @@
 using System.Collections;
 
 public class Lighting : MonoBehaviour {
+	
 	private Light myLight;
 
-	public static float timer = 30.0f;
+	[SerializeField]
+	private Stat2 battery;
+	public Transform BatBar;
+
 	private bool ispaused = true; 
 
+
+	void Awake()
+	{
+		//Initializes the stats
+		battery.Initialize();
+	}
 
 	// Use this for initialization
 	void Start () {
@@ -21,10 +31,9 @@ public class Lighting : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	
+		BatBar.transform.localScale = new Vector3(0.01f*battery.CurrentValue, 1f, 1f);
 
-
-		Debug.Log (timer);
-		if(timer >= 0.0f)
+		if(battery.CurrentValue >= 0.0f)
 		{
 			if(Input.GetKeyDown(KeyCode.F) && PlayerMovement.collected == true)
 			{
@@ -34,7 +43,7 @@ public class Lighting : MonoBehaviour {
 
 		}
 
-		if(timer <= 0.0f)
+		if(battery.CurrentValue <= 0.0f)
 		{
 			
 				myLight.enabled = false;
@@ -42,11 +51,11 @@ public class Lighting : MonoBehaviour {
 
 		}
 
-		if (timer >= 0 && PlayerMovement.collided1 == true) 
+		if (battery.CurrentValue >= 0 && PlayerMovement.collided1 == true) 
 		{
 			if (!ispaused) 
 			{
-				timer -= Time.deltaTime;
+				battery.CurrentValue -= Time.deltaTime;
 			}
 
 		}

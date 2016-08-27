@@ -2,13 +2,20 @@
 using System.Collections;
 
 public class Damage : MonoBehaviour {
-
-	public static float health = 3.0f;
+	
+	[SerializeField]
+	private Stat health;
+	public Transform HpBar;
 	int damageAmount;
 	int damageTime;
 
 	public GameObject player;
 
+	void Awake()
+	{
+		//Initializes the stats
+		health.Initialize();
+	}
 
 	// Use this for initialization
 	void Start () 
@@ -21,10 +28,11 @@ public class Damage : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		
+		HpBar.transform.localScale = new Vector3(0.01f*health.CurrentValue, 1f, 1f);
 
 
-
-		if (health <= 0.0f) {
+		if (health.CurrentValue <= 0.0f) {
 			Debug.Log ("Player destroyed");
 
 			StartCoroutine (DamageOverTimeCoroutine2 (1f));
@@ -32,14 +40,25 @@ public class Damage : MonoBehaviour {
 	}
 	void OnCollisionEnter(Collision col)
 	{
-		if (col.gameObject.tag == "Enemy")
+		if (col.gameObject.tag == "Enemy") 
 		{
-			health--;
-
-			//StartCoroutine (DamageOverTimeCoroutine (1f));
-
+			Debug.Log ("Hit Enemy");
+			health.CurrentValue -= 25;
 		}
 	}
+
+	void OnTriggerEnter (Collider col)
+	{
+		if (col.gameObject.tag == "health") 
+		{
+			if (health.CurrentValue < 100)
+			{
+				health.CurrentValue += 50;
+				Destroy(col.gameObject);
+			}
+		}
+	}
+
 
 	/*	void OnCollisionExit(Collision collisionInfo)
 	{
@@ -63,7 +82,7 @@ public class Damage : MonoBehaviour {
 */
 	IEnumerator DamageOverTimeCoroutine2(float wait)
 	{
-		while (health <= 0)
+		while (health.CurrentValue <= 0)
 		{
 			player.GetComponent<PlayerMovement> ().enabled = false;
 			yield return new WaitForSeconds (3f);
