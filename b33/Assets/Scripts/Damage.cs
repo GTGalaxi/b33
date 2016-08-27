@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Damage : MonoBehaviour {
 
-	public float health = 2.0f;
+	public static float health = 3.0f;
 	int damageAmount;
 	int damageTime;
 
@@ -21,6 +21,9 @@ public class Damage : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+
+
 		if (health <= 0.0f) {
 			Debug.Log ("Player destroyed");
 

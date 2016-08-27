@@ -4,10 +4,14 @@ using System.Collections;
 
 public class PlayerMovement : MonoBehaviour {
 
+	public static bool collided1 = false;
+	public static int turnonmesh;
 	public static bool collected = false;
 	private bool jumps = false;
 	public float speed = 1.0f;
 	private Rigidbody rb;
+	public GameObject door;
+
 
 	public float jumpvelocity = 5.0f;
 
@@ -18,11 +22,10 @@ public class PlayerMovement : MonoBehaviour {
 		rb = GetComponent<Rigidbody> ();
 		Debug.Log (speed);
 	}
-	
+
 	// Update is called once per frame
 	void FixedUpdate () {
 		
-
 
 		rb.velocity = (new Vector3 (Input.GetAxis("Horizontal")*speed, rb.velocity.y, 0));
 
@@ -32,6 +35,8 @@ public class PlayerMovement : MonoBehaviour {
 			StartCoroutine (jump ());
 			jumps = true;
 		}
+
+
 
 
 
@@ -79,7 +84,10 @@ public class PlayerMovement : MonoBehaviour {
 
 			Debug.Log ("1");
 			collected = true;
+			turnonmesh++;
 			Destroy (col.gameObject);
+			collided1 = true;
+			Destroy (door);
 
 		}
 
