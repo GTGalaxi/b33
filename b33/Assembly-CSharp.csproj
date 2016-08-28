@@ -45,7 +45,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+<<<<<<< Updated upstream
      <Compile Include="Assets\Lore.cs" />
+=======
+>>>>>>> Stashed changes
      <Compile Include="Assets\PyroParticles\Demo\DemoScript.cs" />
      <Compile Include="Assets\PyroParticles\Demo\DemoScriptEditor.cs" />
      <Compile Include="Assets\PyroParticles\Prefab\Script\FireBaseScript.cs" />
@@ -55,6 +58,10 @@
      <Compile Include="Assets\PyroParticles\Prefab\Script\FireProjectileScript.cs" />
      <Compile Include="Assets\PyroParticles\Prefab\Script\MeteorSwarmScript.cs" />
      <Compile Include="Assets\PyroParticles\Prefab\Script\SingleLineAttribute.cs" />
+<<<<<<< Updated upstream
+=======
+     <Compile Include="Assets\Scripts\AppQuit.cs" />
+>>>>>>> Stashed changes
      <Compile Include="Assets\Scripts\BarScript.cs" />
      <Compile Include="Assets\Scripts\BarScript2.cs" />
      <Compile Include="Assets\Scripts\Cameramove.cs" />
@@ -71,6 +78,7 @@
      <Compile Include="Assets\Scripts\Stat.cs" />
      <Compile Include="Assets\Scripts\Stat2.cs" />
      <Compile Include="Assets\Scripts\enableflashlight.cs" />
+     <Compile Include="Assets\Scripts\levelselect.cs" />
      <Compile Include="Assets\Stuff\Standard Assets\Characters\FirstPersonCharacter\Scripts\FirstPersonController.cs" />
      <Compile Include="Assets\Stuff\Standard Assets\Characters\FirstPersonCharacter\Scripts\HeadBob.cs" />
      <Compile Include="Assets\Stuff\Standard Assets\Characters\FirstPersonCharacter\Scripts\MouseLook.cs" />

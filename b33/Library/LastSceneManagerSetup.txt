@@ -1,4 +1,8 @@
 sceneSetups:
+<<<<<<< Updated upstream
 - path: Assets/Scenes/Level_2 (Main) V_4.unity
+=======
+- path: Assets/Scenes/Main Menu.unity
+>>>>>>> Stashed changes
   isLoaded: 1
   isActive: 1
