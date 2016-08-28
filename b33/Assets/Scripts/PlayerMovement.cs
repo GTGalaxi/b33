@@ -104,6 +104,26 @@ public class PlayerMovement : MonoBehaviour {
 
 		}
 
+		if(col.tag == "end")
+		{
+
+			Application.LoadLevel ("Level_2 (Main) V_4");
+
+		}
+
+	}
+
+	void OnCollisionEnter(Collision col)
+	{
+
+
+		if(col.gameObject.tag == "glass")
+		{
+
+			Destroy (col.gameObject);
+
+		}
+
 	}
 
 }
