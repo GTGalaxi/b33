@@ -3,8 +3,6 @@ using System.Collections;
 
 public class Pickups : MonoBehaviour {
 
-	[SerializeField]
-	private Stat2 battery;
 
 	// Use this for initialization
 	void Start () 
@@ -21,16 +19,6 @@ public class Pickups : MonoBehaviour {
 	}
 
 
-	void OnTriggerEnter(Collider col)
-	{
 
-		if(col.tag == "battery")
-		{
-			GameObject.FindObjectOfType (typeof(Stat2));
-			battery.CurrentValue = 30.0f;
-			Destroy (col.gameObject);
-
-		}
-	}
 
 }

@@ -10,7 +10,7 @@ public class Lighting : MonoBehaviour {
 	public Transform BatBar;
 
 	private bool ispaused = true; 
-
+	public static int pickup;
 
 	void Awake()
 	{
@@ -20,6 +20,7 @@ public class Lighting : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+
 		myLight = GetComponent<Light>();
 
 		myLight.enabled = false;
@@ -31,7 +32,16 @@ public class Lighting : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	
-		BatBar.transform.localScale = new Vector3(0.01f*battery.CurrentValue, 1f, 1f);
+
+		if (PlayerMovement.pickup == true) 
+		{
+
+			battery.CurrentValue = battery.MaxVal;
+			PlayerMovement.pickup = false;
+
+		}
+
+		BatBar.transform.localScale = new Vector3(0.033f*battery.CurrentValue, 1f, 1f);
 
 		if(battery.CurrentValue >= 0.0f)
 		{

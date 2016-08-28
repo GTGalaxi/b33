@@ -14,7 +14,9 @@ public class PlayerMovement : MonoBehaviour {
 	public float topSpeed = 5.0f;
 	public float slowSpeed = 1.2f;
 	public Animator animator;
+	public GameObject Flashlight;
 
+	public static bool pickup = false;
 	public float jumpvelocity = 5.0f;
 
 
@@ -38,12 +40,14 @@ public class PlayerMovement : MonoBehaviour {
 		if (Input.GetAxisRaw ("Horizontal") == 1) {
 			animator.SetBool ("Run", true);
 			transform.localScale = new Vector3(30f, 30f, 30f);
+			Flashlight.transform.localEulerAngles = new Vector3(0, 0, 0);
 		}
 
 		else if (Input.GetAxisRaw ("Horizontal") == -1)
 		{
 			animator.SetBool ("Run", true);
 			transform.localScale = new Vector3(30f, 30f, -30f);
+			Flashlight.transform.localEulerAngles = new Vector3(0, 180,0);
 		}
 
 		if (Input.GetAxisRaw ("Horizontal") == 0) {
@@ -53,7 +57,7 @@ public class PlayerMovement : MonoBehaviour {
 
 
 
-		if (Input.GetKey(KeyCode.Space) == true/* && jumps == false*/)
+		if (Input.GetKey(KeyCode.Space) == true && jumps == false)
 		{
 			StartCoroutine (jump ());
 			jumps = true;
@@ -69,12 +73,19 @@ public class PlayerMovement : MonoBehaviour {
 		animator.SetBool ("Jump", false);
 	}
 
-	void OnCollisionExit(Collision col)
+	void OnCollisionStay(Collision col)
 	{
-		jumps = false;
+		foreach (ContactPoint contact in col.contacts) {
+			if (contact.thisCollider.tag != "Non-Jump") 
+			{
+				jumps = false;
+			}
+		}
+
+
 	}
 
-	void OnCollisionEnter(Collision col)
+	void OnCollisionExit(Collision col)
 	{
 		jumps = true;
 	}
@@ -82,15 +93,14 @@ public class PlayerMovement : MonoBehaviour {
     void OnTriggerEnter(Collider col)
 	{
 
-		if(col.tag == "flash")
+		if(col.tag == "battery")
 		{
-
+			pickup = true;
 			Debug.Log ("1");
 			collected = true;
 			turnonmesh++;
 			Destroy (col.gameObject);
 			collided1 = true;
-			//Destroy (door);
 
 		}
 
