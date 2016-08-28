@@ -1,8 +1,4 @@
 sceneSetups:
-<<<<<<< Updated upstream
-- path: Assets/Scenes/Level_1 (Tutorial).unity
-=======
-- path: Assets/Scenes/Lose.unity
->>>>>>> Stashed changes
+- path: Assets/Scenes/Level_2 (Main) V_4.unity
   isLoaded: 1
   isActive: 1
