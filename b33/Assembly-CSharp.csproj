@@ -53,10 +53,16 @@
      <Compile Include="Assets\Scripts\Fadein.cs" />
      <Compile Include="Assets\Scripts\Lighting.cs" />
      <Compile Include="Assets\Scripts\MenuScript.cs" />
+     <Compile Include="Assets\Scripts\NewBehaviourScript.cs" />
      <Compile Include="Assets\Scripts\Pickups.cs" />
      <Compile Include="Assets\Scripts\PlayerMovement.cs" />
+<<<<<<< Updated upstream
      <Compile Include="Assets\Scripts\Stat.cs" />
      <Compile Include="Assets\Scripts\Stat2.cs" />
+=======
+     <Compile Include="Assets\Scripts\Playerdeath.cs" />
+     <Compile Include="Assets\Scripts\ResetVolume.cs" />
+>>>>>>> Stashed changes
      <Compile Include="Assets\Scripts\enableflashlight.cs" />
      <Compile Include="Assets\Stuff\Standard Assets\Characters\FirstPersonCharacter\Scripts\FirstPersonController.cs" />
      <Compile Include="Assets\Stuff\Standard Assets\Characters\FirstPersonCharacter\Scripts\HeadBob.cs" />

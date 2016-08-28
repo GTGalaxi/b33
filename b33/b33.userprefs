@@ -1,5 +1,6 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+<<<<<<< Updated upstream
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\enableflashlight.cs">
     <Files>
       <File FileName="Assets\Scripts\PlayerMovement.cs" Line="69" Column="36" />
@@ -10,6 +11,14 @@
       <File FileName="Assets\Scripts\Lighting.cs" Line="55" Column="4" />
       <File FileName="Assets\Stuff\Standard Assets\Characters\ThirdPersonCharacter\Scripts\ThirdPersonCharacter.cs" Line="97" Column="40" />
       <File FileName="Assets\Scripts\enableflashlight.cs" Line="18" Column="3" />
+=======
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Playerdeath.cs">
+    <Files>
+      <File FileName="Assets\Scripts\NewBehaviourScript.cs" Line="28" Column="36" />
+      <File FileName="Assets\Scripts\MenuScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\ResetVolume.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Playerdeath.cs" Line="22" Column="32" />
+>>>>>>> Stashed changes
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
